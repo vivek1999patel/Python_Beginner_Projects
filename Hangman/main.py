@@ -13,6 +13,7 @@ def play():
             user = input("Guess the letter: ").lower()
             used_letters.add(user)
             is_True, line = complete_puzzle(line, computer, used_letters)
+            print("User letters: ", used_letters)
             print(line)
             if (is_True == False):
                 points += 1
@@ -34,13 +35,13 @@ def complete_puzzle(line, word, used_letters):
     word_list = line
     for index,letter in enumerate(word):
         if (letter in used_letters):
-            # print(word.index(letter))
-            print("letter is: " + letter + " at index: ", word.index(letter))
             word_list[index] = letter
         else:
             word_list[index] = '-'
+        return True, word_list
+    else:
+        return False, word_list
 
-    return True, word_list
 
 
 play()
