@@ -44,6 +44,4 @@ def complete_puzzle(line, word, used_letters):
     
     return word_list
 
-
-
 play()
